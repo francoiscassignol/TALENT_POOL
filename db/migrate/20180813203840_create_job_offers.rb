@@ -10,7 +10,7 @@ class CreateJobOffers < ActiveRecord::Migration[5.2]
       t.text :job_description
       t.text :expected_profile
       t.string :category
-      t.references :user_id, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

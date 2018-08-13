@@ -15,7 +15,7 @@ class CreateApplications < ActiveRecord::Migration[5.2]
       t.string :status
       t.string :profile_picture
       t.string :resume
-      t.references :job_offer_id, foreign_key: true
+      t.references :job_offer, foreign_key: true
 
       t.timestamps
     end
