@@ -1,0 +1,18 @@
+<% if user_signed_in? %>
+
+     <% if params[:controller] == "job_offers" && params[:action] == "index" %>
+        <%= link_to "Create an opportunity", new_job_offer_path, class: "btn btn-primary"  %>
+     <% elsif params[:controller] == "job_offers" && params[:action] == "show"%>
+        <%= link_to "Edit", edit_job_offer_path(job_offer) , class: "btn btn-primary" %>
+        <%= link_to "Delete", job_offer_path(job_offer), method: :delete, class: "btn btn-primary", data: { confirm: "sure?" } %>
+      <% end %>
+
+   <% else %>
+
+      <% if params[:controller] == "job_offers" && params[:action] == "index" %>
+        <a role="button" href="" class="btn btn-primary">Recruiters</a>
+      <% elsif params[:controller] == "job_offers" && params[:action] == "show" %>
+        <a role="button" href="" class="btn btn-primary">Apply to this job</a>
+      <% end %>
+
+   <% end %>

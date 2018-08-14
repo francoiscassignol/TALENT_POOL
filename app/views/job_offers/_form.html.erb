@@ -1,0 +1,16 @@
+<%= simple_form_for @job_offer do |f| %>
+  <%= f.input :job_title %>
+  <%= f.input :category, collection: JobOffer::CATEGORIES %>
+  <%= f.input :division, collection: JobOffer::DIVISIONS %>
+  <%= f.input :division_description %>
+  <%= f.input :contract_type, collection: JobOffer::CONTRACT_TYPES %>
+  <%= f.input :start_date, as: :date, html5: true %>
+  <%= f.input :location, collection: JobOffer::LOCATIONS %>
+  <%= f.input :job_description %>
+  <%= f.input :expected_profile %>
+  <% if @job_offer.new_record? %>
+    <%= f.submit "Create an opportunity", class: "btn btn-primary" %>
+  <% else %>
+    <%= f.submit "Update an opportunity", class: "btn btn-primary" %>
+  <% end %>
+<% end %>
