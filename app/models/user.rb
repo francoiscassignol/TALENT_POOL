@@ -4,9 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :job_offers
-  # validates :first_name, presence: true
-  # validates :last_name, presence: true
-  # validates :role, presence: true, inclusion: { in: ["DRH","Assistant RH","Direction"] }
-  # validates :email, uniqueness: true
+  ROLES = ["DRH", "Assistant RH", "Direction"]
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :role, presence: true, inclusion: { in: ["DRH","Assistant RH","Direction"] }
+  validates :email, uniqueness: true
 end
 
