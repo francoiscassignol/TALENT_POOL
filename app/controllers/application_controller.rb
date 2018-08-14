@@ -12,4 +12,4 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :role])
   end
 end
-# ATTENTION NE VOUS RISQUEZ PAS A TRAVAILLER DANS CE CONTROLLER
+
