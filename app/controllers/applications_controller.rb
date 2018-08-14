@@ -18,6 +18,7 @@ class ApplicationsController < ApplicationController
   def update
     application_find
     @application.update(application_params)
+    redirect_to application_path(@application.id)
   end
 
   def destroy

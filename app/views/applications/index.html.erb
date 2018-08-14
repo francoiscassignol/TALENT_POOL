@@ -1,0 +1,7 @@
+<h1>Applications Dashboard</h1>
+<% @applications.each do |element| %>
+<h2><%= element.first_name %>
+  <%= element.last_name %></h2>
+<h3><%= element.status %></h3>
+<h3><%= link_to "Details",application_path(element.id) %>
+<% end %>
