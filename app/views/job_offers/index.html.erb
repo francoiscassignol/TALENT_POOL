@@ -1,0 +1,14 @@
+<h1>All the job offers I published</h1>
+
+<% @job_offers.each do |job_offer| %>
+  <h2> <%= job_offer.job_title %> </h2>
+  <p> <%= job_offer.category %> </p>
+  <p> <%= job_offer.division %> </p>
+  <p> <%= job_offer.start_date %> </p>
+  <%= link_to "See the job offer", job_offer_path(job_offer) %>
+
+<!--  Add the job_offer.status
+      Add the job_offer / number of applications -->
+
+<% end %>
+
