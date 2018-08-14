@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :job_offers do
     resources :applications, only: [:index, :new, :create]
   end
-  resources :applications, except: [:new, :create]
+  resources :applications, except: [:index, :new, :create]
   resources :accounts, only: [:new, :create, :edit, :update]
+
+  get 'applications', to: "applications#all", as: "all_applications"
 end
