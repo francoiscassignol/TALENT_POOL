@@ -1,3 +1,3 @@
 class Application < ApplicationRecord
-  belongs_to :job_offer_id
+  belongs_to :job_offer
 end
