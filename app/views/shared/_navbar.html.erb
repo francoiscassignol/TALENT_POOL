@@ -3,33 +3,35 @@
  <p class="navbar-talent-brand">TALENTSPOOL</p>
  <!-- Right Navigation -->
  <div class="navbar-talent-right hidden-xs hidden-sm">
-
-   <%# display_button(@job_offer) %>
-   <%= render "shared/button", job_offer: @job_offer %>
-
+  <%= render "shared/button", job_offer: @job_offer %>
    <!-- Profile picture with dropdown list -->
+  <% if user_signed_in? %>
    <div class="navbar-talent-item">
      <div class="dropdown">
-       <img src="" id="navbar-talent-menu" data-toggle="dropdown">
+       <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-talent-menu" data-toggle="dropdown">
        <ul class="dropdown-menu dropdown-menu-right navbar-talent-dropdown-menu">
-         <li><a href="#">Profile</a></li>
-         <li><a href="#">Dashboard</a></li>
-         <li><a href="#">Log Out</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
        </ul>
      </div>
    </div>
- </div>
 
- <!-- Dropdown appearing on mobile only -->
- <div class="navbar-talent-item hidden-md hidden-lg">
-   <div class="dropdown">
-     <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-     <ul class="dropdown-menu dropdown-menu-right navbar-talent-dropdown-menu">
-       <li><a href="#">Host</a></li>
-       <li><a href="#">Trips</a></li>
-       <li><a href="#">Messagese</a></li>
-     </ul>
+  <% else %>
+
+   <div class="navbar-talent-item">
+    <div class="dropdown">
+      <img src="" class="avatar dropdown-toggle" id="navbar-talent-menu" data-toggle="dropdown">
+      <ul class="dropdown-menu dropdown-menu-right navbar-talent-dropdown-menu">
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><%= link_to "Login", new_user_session_path  %></li>
+      </ul>
+    </div>
    </div>
+
+  <% end %>
+
+
  </div>
 </div>
-

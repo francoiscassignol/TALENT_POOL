@@ -1,4 +1,4 @@
-<h1>All the job offers I published</h1>
+<h1>All the job offers</h1>
 
 <% @job_offers.each do |job_offer| %>
   <h2> <%= job_offer.job_title %> </h2>
@@ -6,7 +6,11 @@
   <p> <%= job_offer.division %> </p>
   <p> <%= job_offer.start_date %> </p>
   <p><%= link_to "See job offer", job_offer_path(job_offer) %></p>
-  <p><%= link_to "Edit job offer", edit_job_offer_path(job_offer) %></p>
+
+  <% if user_signed_in? %>
+    <p><%= link_to "Edit job offer", edit_job_offer_path(job_offer) %></p>
+    <p><%= link_to "See all applications to this job offer", job_offer_applications_path(job_offer) %></p>
+  <% end %>
 
 <!--  Add the job_offer.status
       Add the job_offer / number of applications -->

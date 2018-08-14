@@ -1,6 +1,15 @@
+<h1>Applications for <%= @job_offer.job_title %></h1>
+<h2>Location : <%= @job_offer.location %></h2>
+<h2>Category : <%= @job_offer.category %></h2>
+
+
 <% @applications.each do |app| %>
-<%= app.first_name %>
-<%= app.last_name %>
-<%= link_to "Details",application_path(app.id) %>
+  <h3><%= app.first_name %><%= app.last_name %></h3>
+  <h3><%= app.email%></h3>
+  <h3><%= app.city%></h3>
+  <h3><%= app.resume%></h3>
+  <%= link_to "Details",application_path(app.id) %>
 </br>
 <%end %>
+<p><%= link_to "Back to job offers", job_offers_path %>
+<!--<p><%= link_to "Back to job offer", job_offer_path(@applications[0].job_offer_id) %></p>-->
