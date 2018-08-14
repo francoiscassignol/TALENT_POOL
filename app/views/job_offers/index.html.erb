@@ -5,7 +5,8 @@
   <p> <%= job_offer.category %> </p>
   <p> <%= job_offer.division %> </p>
   <p> <%= job_offer.start_date %> </p>
-  <%= link_to "See the job offer", job_offer_path(job_offer) %>
+  <p><%= link_to "See job offer", job_offer_path(job_offer) %></p>
+  <p><%= link_to "Edit job offer", edit_job_offer_path(job_offer) %></p>
 
 <!--  Add the job_offer.status
       Add the job_offer / number of applications -->

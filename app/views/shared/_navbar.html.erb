@@ -1,11 +1,11 @@
 <div class="navbar-talent">
  <!-- Logo -->
  <p class="navbar-talent-brand">TALENTSPOOL</p>
-
  <!-- Right Navigation -->
  <div class="navbar-talent-right hidden-xs hidden-sm">
 
-   <a role="button" href="" class="btn btn-primary">Test</a>
+   <%# display_button(@job_offer) %>
+   <%= render "shared/button", job_offer: @job_offer %>
 
    <!-- Profile picture with dropdown list -->
    <div class="navbar-talent-item">
@@ -32,3 +32,4 @@
    </div>
  </div>
 </div>
+
