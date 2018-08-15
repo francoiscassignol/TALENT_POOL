@@ -1,5 +1,26 @@
+<div class="banner text-center" style="background-image: url('https://dp8v87cz8a7qa.cloudfront.net/43730/5b7440818fc501534345345.jpg');">
+  <div class="banner-content text-center">
+    <h1>Find your ideal job from 200+ jobs</h1>
+
+  <div class="row text-center">
+  <div class="col-md-offset-2">
+    <p class="col-md-2">Marketing</p>
+    <p class="col-md-1">Sales</p>
+    <p class="col-md-2">Finance</p>
+    <p class="col-md-1">HR</p>
+    <p class="col-md-2">Executive</p>
+    <p class="col-md-1">Legal</p>
+    <p class="col-md-1">Tech</p>
+  </div>
+  </div>
+  </div>
+</div>
+
+
+
 <h1 class="text-center">All the job offers</h1>
 
+<div class="container">
 <div class="row">
 <% @job_offers.each do |job_offer| %>
   <div class="col-sm-6 col-md-4">
@@ -7,7 +28,7 @@
       <div class="caption">
         <h3><strong><%= job_offer.job_title.capitalize %></strong></h3>
           <p>#<%= job_offer.category %> #<%= job_offer.division %> #<%= job_offer.start_date %></p>
-          <p><%= link_to "See job offer", job_offer_path(job_offer), class: "btn btn-default" %>
+          <p><%= link_to "See job offer", job_offer_path(job_offer), class: "btn btn-primary" %>
           <% if user_signed_in? %>
             <%= link_to "Edit job offer", edit_job_offer_path(job_offer), class: "btn btn-default"%> <%= link_to "See applications", job_offer_applications_path(job_offer), class: "btn btn-primary" %></p>
           <% end %>
@@ -17,4 +38,5 @@
     </div>
   </div>
 <% end %>
+</div>
 </div>
