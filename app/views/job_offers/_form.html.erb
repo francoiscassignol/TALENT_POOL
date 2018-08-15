@@ -8,10 +8,12 @@
       <%= f.input :division_description %>
       <%= f.input :contract_type, collection: JobOffer::CONTRACT_TYPES  %>
       <%# f.input :start_date, input_html: { 'data-provide': 'datepicker'} %>
+
       <label for="start_date">Start date</label>
       <div class="input-group date" data-provide="datepicker">
       <input type="text" class="form-control" name="job_offer[start_date]" id="start_date">
       <div class="input-group-addon">
+
         <span class="glyphicon glyphicon-th"></span>
         </div>
         </div>
@@ -22,6 +24,7 @@
         <div class="text-center"><%= f.submit "Create an opportunity", class: "btn btn-primary"  %>
           <%= link_to "Back to Dashboard", job_offers_path, class: "btn btn-default" %></div>
         <% else %>
+
         <div class="text-center"><%= f.submit "Update an opportunity", class: "btn btn-primary"  %>
         <%= link_to "Back to Dashboard", job_offers_path, class: "btn btn-default" %></div>
       <% end %>
