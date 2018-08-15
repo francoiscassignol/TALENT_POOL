@@ -3,12 +3,15 @@
 <h2>Category : <%= @job_offer.category %></h2>
 
 
+
 <% @applications.each do |app| %>
   <h3><%= app.first_name %><%= app.last_name %></h3>
   <h3><%= app.status %></h3>
   <h3><%= app.email%></h3>
   <h3><%= app.city%></h3>
   <h3><%= app.resume%></h3>
+  <%# link_to "Edit",edit_application_path(app.id) %>
+</br>
   <%= link_to "Details",application_path(app.id) %>
 </br>
 <%end %>
