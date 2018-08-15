@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2018_08_13_204016) do
     t.string "website"
     t.string "linkedin"
     t.text "cover_letter"
-    t.string "status"
+    t.string "status", default: "Under review"
     t.string "profile_picture"
     t.string "resume"
     t.bigint "job_offer_id"

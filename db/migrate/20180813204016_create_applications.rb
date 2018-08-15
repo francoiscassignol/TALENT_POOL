@@ -12,7 +12,7 @@ class CreateApplications < ActiveRecord::Migration[5.2]
       t.string :website
       t.string :linkedin
       t.text :cover_letter
-      t.string :status
+      t.string :status, default: "Under review"
       t.string :profile_picture
       t.string :resume
       t.references :job_offer, foreign_key: true
