@@ -87,6 +87,9 @@ SimpleForm.setup do |config|
   # CSS class to add for error notification helper.
   config.error_notification_class = 'error_notification'
 
+  config.input_mappings = { /country/ => :select }
+
+
   # ID to add for error notification helper.
   # config.error_notification_id = nil
 
