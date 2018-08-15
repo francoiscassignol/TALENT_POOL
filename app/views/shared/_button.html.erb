@@ -7,7 +7,7 @@
       <% end %>
    <% else %>
       <% if params[:controller] == "job_offers" && params[:action] == "index" %>
-        <%= link_to "Recruiters", new_user_session_path, class: "btn btn-primary" %>
+        <%= link_to "Recruiters", new_user_session_path, class: "btn btn-default" %>
       <% elsif params[:controller] == "job_offers" && params[:action] == "show" %>
         <%= link_to "Apply to this job", new_job_offer_application_path(job_offer.id), class: "btn btn-primary" %>
       <% end %>
