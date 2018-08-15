@@ -15,6 +15,7 @@ class JobOffersController < ApplicationController
 
   def create
     @job_offer = JobOffer.new(job_offer_params)
+    @job_offer[:start_date] = Date.parse
     @job_offer.user = current_user
     if @job_offer.save
       redirect_to job_offer_path(@job_offer)
