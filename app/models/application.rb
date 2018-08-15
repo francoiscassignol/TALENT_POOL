@@ -3,5 +3,4 @@ class Application < ApplicationRecord
 
   STATUS = ["Under review", "In process", "Rejected", "Accepted"]
   COUNTRY = %w(France Andorre Espagne)
-  #validates
 end

@@ -1,14 +1,16 @@
 <%= render 'banner' %>
 <h1 class="text-center">All the job offers</h1>
 
+  <h1><%= flash[:alert] %></h1>
 <div class="container">
 <div class="row">
 <% @job_offers.each do |job_offer| %>
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
       <div class="caption">
-        <h3><strong><%= job_offer.job_title.capitalize %></strong></h3>
+        <h3><strong><%= job_offer.job_title.capitalize %></strong></h3>rails
           <p>#<%= job_offer.category %> #<%= job_offer.division %> #<%= job_offer.start_date %></p>
+
           <p><%= link_to "See job offer", job_offer_path(job_offer), class: "btn btn-primary" %>
           <% if user_signed_in? %>
             <%= link_to "Edit job offer", edit_job_offer_path(job_offer), class: "btn btn-default"%> <%= link_to "See applications", job_offer_applications_path(job_offer), class: "btn btn-primary" %></p>

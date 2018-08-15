@@ -1,23 +1,27 @@
 class ApplicationsController < ApplicationController
-  skip_before_action :authenticate_user! #travailler avec un only (pour certaines actions)
+  skip_before_action :authenticate_user!, only: [:new] #travailler avec un only (pour certaines actions)
 
   def all
-    @applications = Application.all
+    @applications = policy_scope(Application)
+
   end
 
   def index
-
     job_offer_find
-    @applications = Application.where(job_offer_id: @job_offer.id)
+    @applications = policy_scope(Application).where(job_offer_id: @job_offer.id)
   end
 
   def new
+
     @application = Application.new
     @job_offer = job_offer_find
+
+    authorize @application
   end
 
   def create
     #raise
+    authorize @application
     job_offer_find
     @application = Application.new(application_params)
     @application.job_offer_id = @job_offer.id
@@ -31,22 +35,25 @@ class ApplicationsController < ApplicationController
 
   def show
     application_find
-
+    authorize @application
   end
 
   def edit
     application_find
+    authorize @application
   end
 
   def update
     application_find
     @application.update(application_params)
     redirect_to application_path(@application.id)
+    authorize @application
   end
 
   def destroy
     application_find
     @application.destroy
+    authorize @application
   end
 
 
