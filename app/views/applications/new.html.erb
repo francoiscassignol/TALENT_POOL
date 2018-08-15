@@ -1,70 +1,76 @@
-<%= form_for([@job_offer, @application]) do |f| %>
-  <div class="form-group">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name , class: 'form-control' %>
-  </div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
 
-  <div class="form-group">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name, class: 'form-control' %>
-  </div>
+    <%= form_for([@job_offer, @application]) do |f| %>
+      <div class="form-group">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name , class: 'form-control' %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.text_field :email, class: 'form-control' %>
-  </div>
+      <div class="form-group">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: 'form-control' %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :phone_number %>
-    <%= f.text_field :phone_number, class: 'form-control' %>
-  </div>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.text_field :email, class: 'form-control' %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :street %>
-    <%= f.text_field :street, class: 'form-control' %>
-  </div>
+      <div class="form-group">
+        <%= f.label :phone_number %>
+        <%= f.text_field :phone_number, class: 'form-control' %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :post_code %>
-    <%= f.text_field :post_code, class: 'form-control' %>
-  </div>
+      <div class="form-group">
+        <%= f.label :street %>
+        <%= f.text_field :street, class: 'form-control' %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :city %>
-    <%= f.text_field :city, class: 'form-control' %>
-  </div>
+      <div class="form-group">
+        <%= f.label :post_code %>
+        <%= f.text_field :post_code, class: 'form-control' %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :country %>
-    <%= f.text_field :country, class: 'form-control' %>
-  </div>
+      <div class="form-group">
+        <%= f.label :city %>
+        <%= f.text_field :city, class: 'form-control' %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :profile_picture %>
-    <%= f.text_field :profile_picture, class: 'form-control' %>
-  </div>
+      <div class="form-group">
+        <%= f.label :country %>
+        <%= f.text_field :country, class: 'form-control' %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :resume %>
-    <%= f.text_field :resume, class: 'form-control' %>
-  </div>
+      <div class="form-group">
+        <%= f.label :profile_picture %>
+        <%= f.text_field :profile_picture, class: 'form-control' %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :website %>
-    <%= f.text_field :website, class: 'form-control' %>
-  </div>
+      <div class="form-group">
+        <%= f.label :resume %>
+        <%= f.text_field :resume, class: 'form-control' %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :linkedin %>
-    <%= f.text_field :linkedin, class: 'form-control' %>
-  </div>
+      <div class="form-group">
+        <%= f.label :website %>
+        <%= f.text_field :website, class: 'form-control' %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :cover_letter %>
-    <%= f.text_field :cover_letter, class: 'form-control' %>
-  </div>
+      <div class="form-group">
+        <%= f.label :linkedin %>
+        <%= f.text_field :linkedin, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :cover_letter %>
+        <%= f.text_field :cover_letter, class: 'form-control' %>
+      </div>
 
 
-  <%= f.submit class: 'btn btn-primary' %>
-
-<% end %>
+      <div class="text-center"><%= f.submit class: 'btn btn-primary' %>
+      <%= link_to "Back to job offers", job_offers_path, class: "btn btn-default" %>
+      </div>
+    </div>
+  <% end %>
+</div>
