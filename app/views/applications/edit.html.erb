@@ -8,8 +8,8 @@
   <%= f.input :post_code %>
   <%= f.input :city  %>
   <%= f.input :country, collection: Application::COUNTRY %>
-  <%= f.input :profile_picture  %>
-  <%= f.input :resume  %>
+  <%= f.file :profile_picture  %>
+  <%= f.file :resume  %>
   <%= f.input :website %>
   <%= f.input :linkedin  %>
   <%= f.input :cover_letter  %>
