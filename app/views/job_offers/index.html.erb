@@ -12,7 +12,7 @@
           <p>#<%= job_offer.category %> #<%= job_offer.division %> #<%= job_offer.start_date %></p>
           <p><%= link_to "See job offer", job_offer_path(job_offer), class: "btn btn-primary" %>
           <% if user_signed_in? %>
-            <%= link_to "Edit job offer", edit_job_offer_path(job_offer), class: "btn btn-default"%> <%= link_to "See applications", job_offer_applications_path(job_offer), class: "btn btn-primary" %></p>
+            <%= link_to "Edit job offer", edit_job_offer_path(job_offer), class: "btn btn-default"%></p>
           <% end %>
         <!--  Add the job_offer.status
               Add the job_offer / number of applications -->
