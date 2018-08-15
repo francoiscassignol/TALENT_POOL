@@ -34,6 +34,9 @@ class JobOffersController < ApplicationController
   end
 
   def destroy
+    fetch_job_offer
+    @job_offer.destroy
+    redirect_to job_offers_path
   end
 
   private
