@@ -7,15 +7,19 @@
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
         <div class="caption">
-          <h3><strong><%= link_to job_offer.job_title.capitalize, job_offer_path(job_offer)%></strong></h3>
-          <p>#<%= job_offer.category %> #<%= job_offer.division %> #<%= job_offer.start_date %></p>
-          <% if user_signed_in? %>
-            <p>#<%= job_offer.applications.size%></p>
-            <p><%= link_to "Edit job offer", edit_job_offer_path(job_offer), class: "btn btn-default"%> <%= link_to "See applications", job_offer_applications_path(job_offer), class: "btn btn-primary" %></p>
-            <% else %>
-            <p><%= link_to "See job offer", job_offer_path(job_offer), class: "btn btn-primary" %></p>
-          <% end %>
+          <div class="text-center">
+          <p><strong><%= job_offer.category %></strong></p>
           </div>
+            <h3><strong><%= link_to job_offer.job_title.capitalize, job_offer_path(job_offer)%></strong></h3>
+            <p>Division: <%= job_offer.division%></p>
+            <p>Start date: <%= job_offer.start_date %></p>
+            <% if user_signed_in? %>
+            <div class="text-center">
+            <p><%= link_to "Edit job offer", edit_job_offer_path(job_offer), class: "btn btn-default"%>
+               <%= link_to "#{job_offer.applications.size} applications", job_offer_applications_path(job_offer), class: "btn btn-primary" %></p>
+            </div>
+          <% end %>
+        </div>
        </div>
       </div>
     <% end %>
