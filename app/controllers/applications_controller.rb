@@ -1,5 +1,5 @@
 class ApplicationsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new] #travailler avec un only (pour certaines actions)
+  skip_before_action :authenticate_user!, only: [:new, :create] #travailler avec un only (pour certaines actions)
 
   def all
     @applications = policy_scope(Application)
@@ -27,7 +27,7 @@ class ApplicationsController < ApplicationController
     @application.job_offer_id = @job_offer.id
 
     if @application.save
-      redirect_to job_offer_applications_path
+      redirect_to job_offers_path
     else
       render :new
     end

@@ -3,7 +3,7 @@ class JobOffersController < ApplicationController
 
   def index
     @job_offers = policy_scope(JobOffer)
-
+    @job_offers. JobOffer.global_search(params[:query])
   end
 
   def show
