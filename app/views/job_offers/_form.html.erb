@@ -1,37 +1,31 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-    <%= simple_form_for @job_offer do |f| %>
-      <%= f.input :job_title %>
-      <%= f.input :category, collection: JobOffer::CATEGORIES %>
-      <%= f.input :division, collection: JobOffer::DIVISIONS %>
-      <%= f.input :division_description %>
-      <%= f.input :contract_type, collection: JobOffer::CONTRACT_TYPES  %>
-      <%# f.input :start_date, input_html: { 'data-provide': 'datepicker'} %>
+      <%= simple_form_for @job_offer do |f| %>
+        <%= f.input :job_title %>
+        <%= f.input :category, collection: JobOffer::CATEGORIES %>
+        <%= f.input :division, collection: JobOffer::DIVISIONS %>
+        <%= f.input :division_description %>
+        <%= f.input :contract_type, collection: JobOffer::CONTRACT_TYPES  %>
 
-      <label for="start_date">Start date</label>
-      <div class="input-group date" data-provide="datepicker">
-      <% if @job_offer.new_record? %>
-          <input type="text" class="form-control" name="job_offer[start_date]" id="start_date">
-      <% else %>
-          <input type="text" class="form-control" name="job_offer[start_date]" id="start_date" value="<%= @job_offer.start_date %>">
-      <% end %>
-          <div class="input-group-addon">
-            <span class="glyphicon glyphicon-th"></span>
+        <%= f.input :start_date, as: :string, input_html: { class: "datepicker" } %>
+
+        <%= f.input :location, collection: JobOffer::LOCATIONS %>
+        <%= f.input :job_description %>
+        <%= f.input :expected_profile %>
+
+        <% if @job_offer.new_record? %>
+          <div class="text-center">
+            <%= f.submit "Create an opportunity", class: "btn btn-primary"  %>
+            <%= link_to "Back to Dashboard", job_offers_path, class: "btn btn-default" %>
           </div>
-        </div>
-      <%= f.input :location, collection: JobOffer::LOCATIONS %>
-      <%= f.input :job_description %>
-      <%= f.input :expected_profile %>
-      <% if @job_offer.new_record? %>
-      <div class="text-center"><%= f.submit "Create an opportunity", class: "btn btn-primary"  %>
-        <%= link_to "Back to Dashboard", job_offers_path, class: "btn btn-default" %></div>
-      <% else %>
-
-      <div class="text-center"><%= f.submit "Update an opportunity", class: "btn btn-primary"  %>
-      <%= link_to "Back to Dashboard", job_offers_path, class: "btn btn-default" %></div>
-    <% end %>
-  <% end %>
+        <% else %>
+          <div class="text-center">
+            <%= f.submit "Update an opportunity", class: "btn btn-primary"  %>
+            <%= link_to "Back to Dashboard", job_offers_path, class: "btn btn-default" %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
