@@ -30,3 +30,6 @@ class ApplicationController < ActionController::Base
   end
 
 end
+
+
+#<h1><%= flash[:alert] %></h1>
