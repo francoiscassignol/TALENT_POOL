@@ -37,6 +37,7 @@ class JobOffersController < ApplicationController
   def update
     fetch_job_offer
     authorize @job_offer
+    @job_offer.start_date = Date.strptime(job_offer_params[:start_date], '%m/%d/%Y')
     @job_offer.update(job_offer_params)
     redirect_to job_offer_path(@job_offer)
   end
