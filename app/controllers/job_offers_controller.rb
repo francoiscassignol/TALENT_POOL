@@ -2,8 +2,11 @@ class JobOffersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @job_offers = policy_scope(JobOffer)
-
+    if params[:category].present?
+      @job_offers = policy_scope(JobOffer).where(category: params[:category])
+    else
+      @job_offers = policy_scope(JobOffer)
+    end
   end
 
   def show
