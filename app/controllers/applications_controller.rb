@@ -3,7 +3,8 @@ class ApplicationsController < ApplicationController
 
   def all
     @applications = policy_scope(Application)
-
+    all_job_offers
+    #raise
   end
 
   def index
@@ -12,7 +13,6 @@ class ApplicationsController < ApplicationController
   end
 
   def new
-
     @application = Application.new
     @job_offer = job_offer_find
 
@@ -59,6 +59,10 @@ class ApplicationsController < ApplicationController
 
 
 private
+
+  def all_job_offers
+    @job_offers = JobOffer.all
+  end
 
   def job_offer_find
     @job_offer = JobOffer.find(params[:job_offer_id])

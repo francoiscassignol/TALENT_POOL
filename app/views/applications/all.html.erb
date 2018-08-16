@@ -1,8 +1,28 @@
-<h1>Applications Dashboard</h1>
-<% @applications.each do |element| %>
-<h2><%= element.first_name %>
-  <%= element.last_name %></h2>
-<h3><%= element.status %></h3>
-<h3><%= link_to "Details",application_path(element.id) %>
-<h3><%= link_to "Edit", edit_application_path(element.id) %></h3>
-<% end %>
+<h1 class="text-center">Applications Dashboard</h1>
+<div class="container">
+  <div class="row">
+    <% @applications.each do |element| %>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <div class="caption">
+            <%= cl_image_tag element.profile_picture, :width => 70, :height => 70, :crop => :fill  %>
+            <h3><strong><%= element.first_name %> <%= element.last_name %></strong></h3>
+            <h4 class=""><%= element.status %></h4>
+            <div class="margin-bottom">
+              <p class="small-interlignage"><strong>Contact</strong></p>
+              <p class="small-interlignage"><strong><%= element.email %></strong></p>
+              <p class="small-interlignage"><strong><%= element.phone_number %></strong></p>
+            </div>
+            <div class="margin-bottom">
+              <p class="small-interlignage light-grey">Poste : <%= element.job_offer.job_title %></p>
+              <p class="small-interlignage light-grey">Category : <%= element.job_offer.category %></p>
+              <p class="small-interlignage light-grey">Division : <%= element.job_offer.division %></p>
+            </div>
+            <%= link_to "Application details",application_path(element.id), class: "btn btn-primary" %>
+            <%= link_to "Edit status", edit_application_path(element.id), class: "btn btn-default" %>
+            </div>
+          </div>
+        </div>
+            <% end %>
+    </div>
+</div>

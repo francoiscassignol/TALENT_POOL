@@ -7,6 +7,10 @@ class JobOffer < ApplicationRecord
   LOCATIONS = ["Pamiers", "Toulouse Fenouillet", "Montauban", "Castelsarasin", "Castres", "Bias"]
 
   def display_start_date
-    start_date.strftime("%A, %b %d")
+    if start_date
+      start_date.strftime("%A, %b %d, in the blessed year %Y")
+    else
+      "no date"
+    end
   end
 end
