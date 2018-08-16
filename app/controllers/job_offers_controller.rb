@@ -18,7 +18,8 @@ class JobOffersController < ApplicationController
 
   def create
     @job_offer = JobOffer.new(job_offer_params)
-    @job_offer[:start_date] = Date.parse
+    # credits to AUDE #
+    @job_offer.start_date = Date.strptime(job_offer_params[:start_date], '%m/%d/%Y')
     @job_offer.user = current_user
     authorize @job_offer
     if @job_offer.save

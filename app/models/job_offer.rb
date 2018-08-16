@@ -5,4 +5,8 @@ class JobOffer < ApplicationRecord
   DIVISIONS = ["M. Bricolage", "Intersport"]
   CONTRACT_TYPES = ["Full time", "Part time", "Intern"]
   LOCATIONS = ["Pamiers", "Toulouse Fenouillet", "Montauban", "Castelsarasin", "Castres", "Bias"]
+
+  def display_start_date
+    start_date.strftime("%A, %b %d")
+  end
 end

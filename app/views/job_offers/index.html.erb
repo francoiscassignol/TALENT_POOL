@@ -12,6 +12,8 @@
           <% if user_signed_in? %>
             <p>#<%= job_offer.applications.size%></p>
             <p><%= link_to "Edit job offer", edit_job_offer_path(job_offer), class: "btn btn-default"%> <%= link_to "See applications", job_offer_applications_path(job_offer), class: "btn btn-primary" %></p>
+            <% else %>
+            <p><%= link_to "See job offer", job_offer_path(job_offer), class: "btn btn-primary" %></p>
           <% end %>
           </div>
        </div>
