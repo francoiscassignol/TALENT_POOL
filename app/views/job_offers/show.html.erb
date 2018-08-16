@@ -7,17 +7,17 @@
     <br>
     <div>
       <h4><strong>DIVISION DESCRIPTION</strong></h4>
-      <p> <%= @job_offer.division_description %></p>
+      <p> <%= @job_offer.division_description.html_safe %></p>
     </div>
     <br>
     <div>
       <h4><strong>JOB DESCRIPTION</strong></h4>
-      <p> <%= @job_offer.job_description %></p>
+      <p> <%= @job_offer.job_description.html_safe %></p>
     </div>
     <br>
     <div>
       <h4><strong>EXPECTED PROFILE</strong></h4>
-      <p> <%= @job_offer.expected_profile %></p>
+      <p> <%= @job_offer.expected_profile.html_safe %></p>
     </div>
     <br>
 
