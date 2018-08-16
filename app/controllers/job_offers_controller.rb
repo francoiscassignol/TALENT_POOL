@@ -17,10 +17,10 @@ class JobOffersController < ApplicationController
   end
 
   def create
-    authorize @job_offer
     @job_offer = JobOffer.new(job_offer_params)
     @job_offer[:start_date] = Date.parse
     @job_offer.user = current_user
+    authorize @job_offer
     if @job_offer.save
       redirect_to job_offer_path(@job_offer)
     else
@@ -29,20 +29,20 @@ class JobOffersController < ApplicationController
   end
 
   def edit
-    authorize @job_offer
     fetch_job_offer
+    authorize @job_offer
   end
 
   def update
-    authorize @job_offer
     fetch_job_offer
+    authorize @job_offer
     @job_offer.update(job_offer_params)
     redirect_to job_offer_path(@job_offer)
   end
 
   def destroy
-    authorize @job_offer
     fetch_job_offer
+    authorize @job_offer
     @job_offer.destroy
     redirect_to job_offers_path
   end

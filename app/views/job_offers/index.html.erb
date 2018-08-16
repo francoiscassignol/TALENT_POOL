@@ -1,24 +1,20 @@
 <%= render 'banner' %>
 <h1 class="text-center">All the job offers</h1>
-
-  <h1><%= flash[:alert] %></h1>
+<h1><%= flash[:alert] %></h1>
 <div class="container">
-<div class="row">
-<% @job_offers.each do |job_offer| %>
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <div class="caption">
-        <h3><strong><%= link_to job_offer.job_title.capitalize, job_offer_path(job_offer)%></strong></h3>
+  <div class="row">
+  <% @job_offers.each do |job_offer| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><strong><%= link_to job_offer.job_title.capitalize, job_offer_path(job_offer)%></strong></h3>
           <p>#<%= job_offer.category %> #<%= job_offer.division %> #<%= job_offer.start_date %></p>
-
           <% if user_signed_in? %>
             <p><%= link_to "Edit job offer", edit_job_offer_path(job_offer), class: "btn btn-default"%> <%= link_to "See applications", job_offer_applications_path(job_offer), class: "btn btn-primary" %></p>
           <% end %>
-        <!--  Add the job_offer.status
-              Add the job_offer / number of applications -->
+          </div>
+       </div>
       </div>
-    </div>
+    <% end %>
   </div>
-<% end %>
-</div>
 </div>
