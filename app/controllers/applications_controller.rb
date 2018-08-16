@@ -27,7 +27,7 @@ class ApplicationsController < ApplicationController
 
     authorize @application
     if @application.save
-      redirect_to job_offer_applications_path
+      redirect_to job_offers_path
     else
       render :new
     end
