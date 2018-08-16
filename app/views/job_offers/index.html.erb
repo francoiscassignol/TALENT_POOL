@@ -10,6 +10,7 @@
           <h3><strong><%= link_to job_offer.job_title.capitalize, job_offer_path(job_offer)%></strong></h3>
           <p>#<%= job_offer.category %> #<%= job_offer.division %> #<%= job_offer.start_date %></p>
           <% if user_signed_in? %>
+            <p>#<%= job_offer.applications.size%></p>
             <p><%= link_to "Edit job offer", edit_job_offer_path(job_offer), class: "btn btn-default"%> <%= link_to "See applications", job_offer_applications_path(job_offer), class: "btn btn-primary" %></p>
           <% end %>
           </div>
