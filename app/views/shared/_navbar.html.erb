@@ -1,6 +1,6 @@
 <div class="navbar-talent">
  <!-- Logo -->
- <a  style="text-decoration:none" href="http://localhost:3000/" class="navbar-talent-brand">TALENTSPOOL</a>
+ <%= link_to "TALENTSPOOL", job_offers_path, class: "navbar-talent-brand" %>
  <!-- Right Navigation -->
  <div class="navbar-talent-right hidden-xs hidden-sm">
   <%= render "shared/button", job_offer: @job_offer %>

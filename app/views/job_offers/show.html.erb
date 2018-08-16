@@ -3,7 +3,7 @@
   <h1><strong><%= @job_offer.job_title.capitalize %></strong></h1>
 
     <div><strong>#<%= @job_offer.division %>#<%= @job_offer.category %>#<%= @job_offer.contract_type %></strong></div>
-    <p class=""><%= @job_offer.start_date %>, <%= @job_offer.location %></p>
+    <p class=""><%= @job_offer.display_start_date %> - <%= @job_offer.location %></p>
     <br>
     <div>
       <h4><strong>DIVISION DESCRIPTION</strong></h4>
