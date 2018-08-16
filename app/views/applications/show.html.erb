@@ -16,6 +16,6 @@
 <%= cl_image_tag @application.profile_picture, height: 300, width: 400, crop: :fill %>
 <h1>this also (is a pic)</h1>
 <%= cl_image_tag @application.resume, height: 300, width: 400, crop: :fill %>
-<%# link_to "Edit", edit_application_path %>
-<%# link_to "Back to Index", applications_path %>
+<%= link_to "Edit", edit_application_path %>
+<%= link_to "Back to applications", all_applications_path %>
 
