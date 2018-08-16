@@ -11,6 +11,8 @@
           <p>#<%= job_offer.category %> #<%= job_offer.division %> #<%= job_offer.start_date %></p>
           <% if user_signed_in? %>
             <p><%= link_to "Edit job offer", edit_job_offer_path(job_offer), class: "btn btn-default"%> <%= link_to "See applications", job_offer_applications_path(job_offer), class: "btn btn-primary" %></p>
+            <% else %>
+            <p><%= link_to "See job offer", job_offer_path(job_offer), class: "btn btn-primary" %></p>
           <% end %>
           </div>
        </div>
