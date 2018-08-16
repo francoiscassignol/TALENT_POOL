@@ -57,17 +57,6 @@ class JobOffersController < ApplicationController
   end
 
   def job_offer_params
-    format_date
-    # credits to AUDE & VICTOR
     params.require(:job_offer).permit(:job_title, :division, :location, :start_date, :contract_type, :division_description, :job_description, :expected_profile, :category)
   end
-
-  def format_date
-    # only format if start date is not a date and is not nil
-    start_date = params[:job_offer][:start_date]
-    if start_date.class != Date && start_date.present?
-      params[:job_offer][:start_date] = Date.strptime(start_date, '%m/%d/%Y')
-    end
-  end
-
 end
