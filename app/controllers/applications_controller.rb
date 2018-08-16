@@ -27,7 +27,9 @@ class ApplicationsController < ApplicationController
 
     authorize @application
     if @application.save
+      flash[:notice] = "Thanks for your application"
       redirect_to job_offers_path
+
     else
       render :new
     end
