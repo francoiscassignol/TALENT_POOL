@@ -4,7 +4,9 @@ class ApplicationsController < ApplicationController
   def all
     @applications = policy_scope(Application)
     all_job_offers
-    #raise
+    if params[:status].present?
+      @applications = @applications.where("status ILIKE ?", params[:status])
+    end
   end
 
   def index
@@ -28,7 +30,7 @@ class ApplicationsController < ApplicationController
     authorize @application
     if @application.save
       flash[:notice] = " #{@application.first_name.capitalize}, thank you for your application !"
-      redirect_to job_offers_path
+      redirect_to applications_path
 
     else
       render :new
