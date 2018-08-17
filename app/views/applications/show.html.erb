@@ -1,23 +1,57 @@
+<h1 class="text-center"><%=@application.first_name.capitalize%>'s application</h1>
 <div class="container">
-	<h2><%= @application.first_name %></h2>
-	<%= @application.last_name %>
-	<%= @application.email %>
-	<%= @application.phone_number %>
-	<%= @application.street %>
-	<%= @application.post_code %>
-	<%= @application.city %>
-	<%= @application.country %>
-	<%= @application.website %>
-	<%= @application.linkedin %>
+  	<div class="row">
+      	<div class="col-sm-8 col-md-offset-2">
+       		<div class="card">
+          		<div class="card-content">
+          			<div class="row">
+	          			<div class="col-md-3">
+	           				<%= cl_image_tag @application.profile_picture, height: 100, width: 100, crop: :fill, class: "circle" %>
+	          			</div>
+						<div class="col-md-9">
+							<div class="margin-bottom">
+				            <h3><%= @application.first_name %> <%= @application.last_name %> <i>   <%= @application.status%></i> </h3>
+			           		<p class="small-interlignage"><strong>Email:</strong> <%= @application.email %></p>
+							<p class="small-interlignage"><strong>Phone:</strong> <%= @application.phone_number %></p>
+							<p class="small-interlignage"><strong>Location:</strong> <%= @application.street %> <%=@application.post_code %> <%= @application.city %>  </p>
+							<p class="small-interlignage"><strong>Country:</strong> <%= @application.country %></p>
+							<p class="small-interlignage"><strong>Website:</strong> <%= @application.website %></p>
+							<p class="small-interlignage"><strong>LinkedIn:</strong> <%= @application.linkedin %></p>
+				            </div>
+        				</div>
+          			</div>
+          		</div>
+     		</div>
+     	</div>
+    </div>
+
+
+        
+
+    <div class="row">
+        <div class="col-sm-8 col-md-offset-2">
+        	<div class="card">
+        		<div class="card-content-2">
+	        				<h3 class="text-center">Profil</h3>
+	        				<div class="content">
+	        				<%= @application.cover_letter %>
+	        				</div>
+	        				<div class="content">
+	        					
+	        				</div>
+        		</div>
+        	</div>
+        </div>
+    </div>
+
+
+
+
 	<%= @application.cover_letter %>
-	<%= @application.status %>
 	
-	<h1>this is a pic</h1>
-	<%= cl_image_tag @application.profile_picture, height: 300, width: 400, crop: :fill %>
-	<h1>this also (is a pic)</h1>
 	<%= cl_image_tag @application.resume, height: 300, width: 400, crop: :fill %>
 	<%= link_to "Edit", edit_application_path, class: "btn btn-default" %>
 	<%= link_to "Back to applications", all_applications_path, class: "btn btn-default" %>
+		
 
 </div>
-
