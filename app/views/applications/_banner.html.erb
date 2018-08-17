@@ -1,0 +1,20 @@
+<div class="banner" style="background-image: url('<%= image_path("samson-duborg-rankin-91091-unsplash") %>');">
+  <div class="banner-content text-center white-text">
+      <h1 class="margin-bottom">Find the ideal candidate</h1>
+
+    <div class="banner-sub-text">
+      <% if params[:status].present? %>
+      <%= link_to "All candidates", all_applications_path, class: "white-text" %>
+      <%= link_to "Under Review", all_applications_path(status: "Under Review"), class: "white-text" %>
+      <%= link_to "In Process", all_applications_path(status: "In Process"), class: "white-text" %>
+      <%= link_to "Accepted", all_applications_path(status: "Accepted"), class: "white-text" %>
+      <%= link_to "Rejected", all_applications_path(status: "Rejected"), class: "white-text" %>
+      <% else %>
+      <%= link_to "Under Review", all_applications_path(status: "Under Review"), class: "white-text" %>
+      <%= link_to "In Process", all_applications_path(status: "In Process"), class: "white-text" %>
+      <%= link_to "Accepted", all_applications_path(status: "Accepted"), class: "white-text" %>
+      <%= link_to "Rejected", all_applications_path(status: "Rejected"), class: "white-text" %>
+      <% end %>
+    </div>
+  </div>
+</div>
