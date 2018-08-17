@@ -1,25 +1,25 @@
-<div class="banner" style="background-image: url('<%= image_path("banner_image") %>');">
-  <div class="banner-content text-center">
+<div class="banner" style="background-image: url('<%= image_path("samson-duborg-rankin-91091-unsplash") %>');">
+  <div class="banner-content text-center white-text">
       <h1 class="margin-bottom">Find your ideal job from 200+ jobs</h1>
 
     <div class="banner-sub-text">
       <% if params[:category].present? %>
-      <%= link_to "All categories", root_path %>
-      <%= link_to "Marketing", root_path(category: "Marketing") %>
-      <%= link_to "Sales", root_path(category: "Sales") %>
-      <%= link_to "Finance", root_path(category: "Finance") %>
-      <%= link_to "HR", root_path(category: "HR") %>
-      <%= link_to "Executive", root_path(category: "Executive") %>
-      <%= link_to "Legal", root_path(category: "Legal") %>
-      <%= link_to "Tech", root_path(category: "Tech") %>
+      <%= link_to "All categories", root_path, class: "white-text" %>
+      <%= link_to "Marketing", root_path(category: "Marketing"), class: "white-text" %>
+      <%= link_to "Sales", root_path(category: "Sales"), class: "white-text" %>
+      <%= link_to "Finance", root_path(category: "Finance"), class: "white-text" %>
+      <%= link_to "HR", root_path(category: "HR"), class: "white-text" %>
+      <%= link_to "Executive", root_path(category: "Executive"), class: "white-text" %>
+      <%= link_to "Legal", root_path(category: "Legal"), class: "white-text" %>
+      <%= link_to "Tech", root_path(category: "Tech"), class: "white-text" %>
       <% else %>
-      <%= link_to "Marketing", root_path(category: "Marketing") %>
-      <%= link_to "Sales", root_path(category: "Sales") %>
-      <%= link_to "Finance", root_path(category: "Finance") %>
-      <%= link_to "HR", root_path(category: "HR") %>
-      <%= link_to "Executive", root_path(category: "Executive") %>
-      <%= link_to "Legal", root_path(category: "Legal") %>
-      <%= link_to "Tech", root_path(category: "Tech") %>
+      <%= link_to "Marketing", root_path(category: "Marketing"), class: "white-text" %>
+      <%= link_to "Sales", root_path(category: "Sales"), class: "white-text" %>
+      <%= link_to "Finance", root_path(category: "Finance"), class: "white-text" %>
+      <%= link_to "HR", root_path(category: "HR"), class: "white-text" %>
+      <%= link_to "Executive", root_path(category: "Executive"), class: "white-text" %>
+      <%= link_to "Legal", root_path(category: "Legal"), class: "white-text" %>
+      <%= link_to "Tech", root_path(category: "Tech"), class: "white-text" %>
       <% end %>
     </div>
   </div>

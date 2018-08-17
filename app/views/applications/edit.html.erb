@@ -1,7 +1,9 @@
-<div class="row">
+<div class="container">
   <div class="col-md-6 col-md-offset-3">
 
+
     <h3><%= @application.first_name%>'s application</h3>
+
       <div class="box_form">
         <%= simple_form_for([@job_offer, @application]) do |f| %>
         <h4>Status</h4>
