@@ -3,8 +3,8 @@
   <div class="row">
     <% @applications.each do |element| %>
       <div class="col-sm-4">
-        <div class="thumbnail">
-          <div class="caption">
+        <div class="card">
+          <div class="card-content">
             <%= cl_image_tag element.profile_picture, :width => 50, :height => 50, :crop => :fill, class: "circle"  %>
             <h3><strong><%= element.first_name %> <%= element.last_name %></strong></h3>
             <h4 class=""><%= element.status %></h4>
