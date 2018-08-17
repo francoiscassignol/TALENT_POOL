@@ -5,23 +5,23 @@
   <div class="row">
   <% @job_offers.each do |job_offer| %>
     <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <div class="caption">
+      <div class="card">
           <div class="text-center">
           <h4 class="label label-default"><strong><%= job_offer.category %></strong></h4>
           </div>
-            <h3><strong><%= link_to job_offer.job_title.capitalize, job_offer_path(job_offer)%></strong></h3>
-            <p>Division: <%= job_offer.division%></p>
-            <p>Start date: <%= job_offer.start_date %></p>
+        <div class="card-content">
+            <h4><strong><%= link_to job_offer.job_title.capitalize, job_offer_path(job_offer)%></strong></h4>
+            <p class="small-interlignage">Division: <%= job_offer.division%></p>
+            <p class="small-interlignage margin-bottom">Start date: <%= job_offer.start_date %></p>
             <% if user_signed_in? %>
             <div class="text-center">
+            </div>
             <p><%= link_to "Edit job offer", edit_job_offer_path(job_offer), class: "btn btn-default"%>
               <% if job_offer.applications.size == 0 %>
                 <button class="btn btn-light-gray" disabled>  No application</button>
               <% else %>
                  <%= link_to "#{job_offer.applications.size} applications", job_offer_applications_path(job_offer), class: "btn btn-primary" %></p>
               <% end %>
-            </div>
           <% end %>
         </div>
        </div>
