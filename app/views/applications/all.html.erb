@@ -5,7 +5,7 @@
       <div class="col-sm-4">
         <div class="thumbnail">
           <div class="caption">
-            <%= cl_image_tag element.profile_picture, :width => 70, :height => 70, :crop => :fill  %>
+            <%= cl_image_tag element.profile_picture, :width => 50, :height => 50, :crop => :fill, class: "circle"  %>
             <h3><strong><%= element.first_name %> <%= element.last_name %></strong></h3>
             <h4 class=""><%= element.status %></h4>
             <div class="margin-bottom">
