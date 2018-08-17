@@ -29,7 +29,7 @@
         <div class="col-sm-8 col-md-offset-2">
         	<div class="card">
         		<div class="card-content-2">
-	        				<p class="text-center">Application Status: <strong class="margin-right"><%= @application.status%></strong>
+	        				<p class="text-center margin-mega-top">Application Status: <strong class="margin-right"><%= @application.status%></strong>
                   <%= link_to "Edit status", edit_application_path, class: "btn btn-default" %></p>
         		</div>
         	</div>
@@ -58,10 +58,14 @@
     </div>
 </div>
 
-<div class="text-center">
+<div class="text-center margin-bottom">
   <%= link_to "See resume of #{@application.first_name}", @application.resume_url, class: "btn btn-primary", download: "", target: 'blank' %>
   <%= link_to "Edit", edit_application_path, class: "btn btn-default" %>
   <%= link_to "Back to applications", all_applications_path, class: "btn btn-default" %>
+</div>
+
+<div class="row">
+
 </div>
 
 
