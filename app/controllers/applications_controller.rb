@@ -30,7 +30,7 @@ class ApplicationsController < ApplicationController
     authorize @application
     if @application.save
       flash[:notice] = " #{@application.first_name.capitalize}, thank you for your application !"
-      redirect_to applications_path
+      redirect_to job_offers_path
 
     else
       render :new
