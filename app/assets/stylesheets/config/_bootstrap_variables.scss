@@ -7,7 +7,7 @@
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
 $body-bg:                 $light-gray;
-$font-size-base: 20px;
+$font-size-base: 15px;
 
 // Colors
 $gray-base:       $gray;
@@ -27,7 +27,6 @@ $border-radius-small: 2px;
 // Patch to make simple_form compatible with bootstrap 3
 .invalid-feedback {
   display: none;
-  width: 100%;
   margin-top: 0.25rem;
   font-size: 80%;
   color: $red;
