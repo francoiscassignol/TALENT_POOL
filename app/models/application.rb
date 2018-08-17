@@ -11,5 +11,4 @@ class Application < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :phone_number, numericality: { only_integer: true }
-  validates :post_code, numericality: { only_integer: true }
 end
