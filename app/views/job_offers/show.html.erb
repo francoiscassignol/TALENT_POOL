@@ -1,26 +1,26 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-  <h1><strong><%= @job_offer.job_title.capitalize %></strong></h1>
-
-    <div><strong>#<%= @job_offer.division %>#<%= @job_offer.category %>#<%= @job_offer.contract_type %></strong></div>
-    <p class=""><%= @job_offer.display_start_date %> - <%= @job_offer.location %></p>
+  <h3><strong>Poste de <%= @job_offer.job_title.capitalize %> en <%= @job_offer.contract_type %> à <%= @job_offer.location %></strong></h3>
+   <p class="label label-default"><%= @job_offer.category %></p>
+    <br>
     <br>
     <div>
-      <h4><strong>DIVISION DESCRIPTION</strong></h4>
+      <h5><strong>DIVISION DESCRIPTION</strong></h5>
       <p> <%= @job_offer.division_description.html_safe %></p>
     </div>
     <br>
     <div>
-      <h4><strong>JOB DESCRIPTION</strong></h4>
+      <h5><strong>JOB DESCRIPTION</strong></h5>
       <p> <%= @job_offer.job_description.html_safe %></p>
     </div>
     <br>
     <div>
-      <h4><strong>EXPECTED PROFILE</strong></h4>
+      <h5><strong>EXPECTED PROFILE</strong></h5>
       <p> <%= @job_offer.expected_profile.html_safe %></p>
     </div>
     <br>
-
+    <p><strong>Started date: <%= @job_offer.display_start_date %></strong></p>
+    <br>
     <div class="text-center"><%= link_to "Back to job offers", job_offers_path, class: "btn btn-default" %></div>
   </div>
 </div>
