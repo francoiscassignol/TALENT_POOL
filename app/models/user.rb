@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :role, presence: true, inclusion: { in: ["DRH","Assistant RH","Direction"] }
-  validates :email, uniqueness: true
+  validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: "please type a valid email" }
+  #validates :email, uniqueness: true
 end
 
