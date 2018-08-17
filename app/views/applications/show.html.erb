@@ -5,12 +5,12 @@
        		<div class="card">
           		<div class="card-content">
           			<div class="row">
-	          			<div class="col-md-3">
-	           				<%= cl_image_tag @application.profile_picture, height: 100, width: 100, crop: :fill, class: "circle" %>
+	          			<div class="col-md-3 margin-top">
+	           				<%= cl_image_tag @application.profile_picture, height: 130, width: 130, crop: :fill, class: "circle" %>
 	          			</div>
 						<div class="col-md-9">
 							<div class="margin-bottom">
-				            <h3><%= @application.first_name %> <%= @application.last_name %> <i>   <%= @application.status%></i> </h3>
+				            <h3><%= @application.first_name %> <%= @application.last_name %></h3>
 			           		<p class="small-interlignage"><strong>Email:</strong> <%= @application.email %></p>
 							<p class="small-interlignage"><strong>Phone:</strong> <%= @application.phone_number %></p>
 							<p class="small-interlignage"><strong>Location:</strong> <%= @application.street %> <%=@application.post_code %> <%= @application.city %>  </p>
@@ -25,33 +25,43 @@
      	</div>
     </div>
 
-
-        
-
     <div class="row">
         <div class="col-sm-8 col-md-offset-2">
         	<div class="card">
         		<div class="card-content-2">
-	        				<h3 class="text-center">Profil</h3>
-	        				<div class="content">
-	        				<%= @application.cover_letter %>
-	        				</div>
-	        				<div class="content">
-	        					
-	        				</div>
+	        				<p class="text-center">Application Status: <strong class="margin-right"><%= @application.status%></strong>
+                  <%= link_to "Edit status", edit_application_path, class: "btn btn-default" %></p>
         		</div>
         	</div>
         </div>
     </div>
 
 
-
-
-	<%= @application.cover_letter %>
-	
-	<%= cl_image_tag @application.resume, height: 300, width: 400, crop: :fill %>
-	<%= link_to "Edit", edit_application_path, class: "btn btn-default" %>
-	<%= link_to "Back to applications", all_applications_path, class: "btn btn-default" %>
-		
-
+<% if @application.cover_letter != nil %>
+    <div class="row">
+        <div class="col-sm-8 col-md-offset-2">
+          <div class="card">
+            <div class="card-content-2">
+              <div class="content">
+                <p>
+                <h3 class="text-center">Cover letter</h3>
+                <%= @application.cover_letter %>
+                </p>
+                <% else %>
+                <% end %>
+                </div>
+                <div class="content">
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
 </div>
+
+<div class="text-center">
+  <%= link_to "See resume of #{@application.first_name}", @application.resume_url, class: "btn btn-primary", download: "", target: 'blank' %>
+  <%= link_to "Edit", edit_application_path, class: "btn btn-default" %>
+  <%= link_to "Back to applications", all_applications_path, class: "btn btn-default" %>
+</div>
+
+
